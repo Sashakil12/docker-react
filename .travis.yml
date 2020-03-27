@@ -2,7 +2,7 @@ sudo: required
 services:
         - docker
 before_install:
-        - docker build --build-arg CI=true -t sashakil/react-app -f Dockerfile.dev .
+        - docker build  -t sashakil/react-app -f Dockerfile.dev .
 
 script:
-        - docker run  ---env CI=true sashakil/react-app npm run test
+        - docker run --env CI=true sashakil/react-app npm run test
